@@ -89,6 +89,16 @@ class DepositDBMySQLAdapter {
 }
 ```
 
+## Important note on Port interfaces
+
+The Port interfaces **MUST ONLY** mention the concepts of your domain and never a technological detail.
+These details belong to adapters and infrastructure code.
+
+The only exception out of these are necessary things like asynchronous operation wrappers, such as
+`Promise<T>`, `Task<T>`, etc.
+
+Even the exceptions that are to be thrown from the Port should belong to the business domain.
+
 ## Kata: Time tracking
 
 You have been tasked to implement an application for personal time tracking. Here are the use cases that
