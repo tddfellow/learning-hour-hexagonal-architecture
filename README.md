@@ -120,3 +120,37 @@ Extra requirements:
   or CLI client, depending on the results of the market research.
 
 Please apply the Ports & Adapters Architecture when designing the solution.
+
+
+### Footnote: Example "interface" in Javascript
+
+```javascript
+// data structure interface
+class Deposit {
+    constructor(amount) {
+        this.amount = amount;
+    }
+}
+
+// object interface
+class DepositDBPort {
+    save(deposit) {
+        throw new Error("not implemented");
+    }
+    
+    find(id) {
+        throw new Error("not implemented");
+    }
+}
+
+// interface implementation
+class DepositDBImpl extends DepositDBPort {
+    save(deposit) {
+        /// .. implementation ..
+    }
+
+    find(id) {
+        /// .. implementation ..
+    }
+}
+```
