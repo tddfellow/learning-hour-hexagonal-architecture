@@ -5,10 +5,11 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "test:watch": "jest --watch"
+    "test:watch": "node --experimental-vm-modules $(yarn bin jest) --watch"
   },
   "type": "module",
   "devDependencies": {
+    "@jest/globals": "^29.0.2",
     "jest": "^29.0.2"
   }
 }
